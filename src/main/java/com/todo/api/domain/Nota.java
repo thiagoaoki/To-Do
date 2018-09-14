@@ -1,6 +1,21 @@
 package com.todo.api.domain;
 
-public class Nota {
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "nota")
+public class Nota implements Serializable{
+	
+	private static final long serialVersionUID = 5380119726184160498L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="GEN_NOTA")
 	private Integer id;
 	private String texto;
 	

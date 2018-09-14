@@ -1,5 +1,9 @@
 package com.todo.api.repository;
 
-public class ToDoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.todo.api.domain.ToDo;
+
+public interface ToDoRepository extends JpaRepository<ToDo, Integer>{
 
 }

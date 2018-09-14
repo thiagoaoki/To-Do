@@ -1,5 +1,9 @@
 package com.todo.api.repository;
 
-public class UsuarioRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.todo.api.domain.Usuario;
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
 }

@@ -1,5 +1,9 @@
 package com.todo.api.repository;
 
-public class NotaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.todo.api.domain.Nota;
+
+public interface NotaRepository extends JpaRepository<Nota, Integer>{
 
 }

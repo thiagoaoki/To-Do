@@ -1,6 +1,17 @@
 package com.todo.api.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "todo")
 public class ToDo {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="GEN_TODO")
 	private Integer id;
 	private String texto;
 	
