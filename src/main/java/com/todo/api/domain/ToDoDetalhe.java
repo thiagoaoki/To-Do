@@ -1,11 +1,12 @@
 package com.todo.api.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -13,10 +14,11 @@ import javax.persistence.Table;
 public class ToDoDetalhe {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="GEN_TODODETALHE")
+	@SequenceGenerator(name="gen_tododetalhe", sequenceName="gen_tododetalhe" )
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="gen_tododetalhe")
 	private Integer id;
-	private Date data;
-	private ToDo todo;
+	
+	private LocalDate data;
 	
 	public Integer getId() {
 		return id;
@@ -26,20 +28,12 @@ public class ToDoDetalhe {
 		this.id = id;
 	}
 	
-	public Date getData() {
+	public LocalDate getData() {
 		return data;
 	}
 	
-	public void setData(Date data) {
+	public void setData(LocalDate data) {
 		this.data = data;
-	}
-	
-	public ToDo getTodo() {
-		return todo;
-	}
-	
-	public void setTodo(ToDo todo) {
-		this.todo = todo;
 	}
 
 	@Override

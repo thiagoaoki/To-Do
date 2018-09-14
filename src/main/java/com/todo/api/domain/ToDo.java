@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -11,7 +12,8 @@ import javax.persistence.Table;
 public class ToDo {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="GEN_TODO")
+	@SequenceGenerator(name="gen_todo", sequenceName="gen_todo" )
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="gen_todo")
 	private Integer id;
 	private String texto;
 	
