@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -20,6 +22,10 @@ public class ToDo implements Serializable {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="gen_todo")
 	private Integer id;
 	private String texto;
+	
+	@ManyToOne
+	@JoinColumn(name = "usuario")
+	private Usuario usuario;
 	
 	public ToDo() {
 		
@@ -39,6 +45,14 @@ public class ToDo implements Serializable {
 
 	public void setTexto(String texto) {
 		this.texto = texto;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	@Override
