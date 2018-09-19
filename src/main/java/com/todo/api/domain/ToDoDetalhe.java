@@ -1,5 +1,6 @@
 package com.todo.api.domain;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
@@ -11,8 +12,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "todo_detalhe")
-public class ToDoDetalhe {
+public class ToDoDetalhe implements Serializable {
 	
+	private static final long serialVersionUID = -4140506167812698569L;
+
 	@Id
 	@SequenceGenerator(name="gen_tododetalhe", sequenceName="gen_tododetalhe" )
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="gen_tododetalhe")

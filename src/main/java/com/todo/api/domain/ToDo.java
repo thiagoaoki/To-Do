@@ -1,5 +1,7 @@
 package com.todo.api.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,7 +11,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "todo")
-public class ToDo {
+public class ToDo implements Serializable {
+		
+	private static final long serialVersionUID = 1712862394672503445L;
 	
 	@Id
 	@SequenceGenerator(name="gen_todo", sequenceName="gen_todo" )

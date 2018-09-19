@@ -1,5 +1,7 @@
 package com.todo.api.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,7 +11,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario implements Serializable {
+	
+	private static final long serialVersionUID = -259700499693250268L;
 	
 	@Id
 	@SequenceGenerator(name="gen_usuario", sequenceName="gen_usuario" )
